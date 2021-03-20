@@ -26,11 +26,11 @@ According to the current [limitations](https://docs.microsoft.com/en-us/azure/ac
 
   - [Upload](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-certificate) the above **Certificate** to the **App Registration** in Azure 
   
-- *Modify* the following variables in the [**New-SelfSignedCertificate.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script:
+- *Modify* the following variables in the [**New-SelfSignedCertificate.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script with your Tenant reference:
 ``` powershell
     $TenantName = "contoso.onmicrosoft.com"
 ```
-- *Modify* the following variables in the [**AzureADDirectoryRoleMemberSync.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script:
+- *Modify* the following variables in the [**AzureADDirectoryRoleMemberSync.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script with your Tenant, Certificate and Groups reference:
 ```powershell    
     $TenantId = "contoso.onmicrosoft.com"
     $AppId = ""

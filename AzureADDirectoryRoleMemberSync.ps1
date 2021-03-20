@@ -5,7 +5,7 @@ $RoleObjIDs = "",""
 $OnPremGrpObjID = ""
 
 $data = Get-Date
-$logFile = ".\Logs\AzureADDirectoryRoleMember_managed_users_status_"+$data.year+$data.Month+$data.Day+"_"+$data.Hour+$data.Minute+".csv"
+$logFile = ".\AzureADDirectoryRoleMemberSync_status_"+$data.year+$data.Month+$data.Day+"_"+$data.Hour+$data.Minute+".csv"
 "RoleID,GroupID,UserUPN,UserDisplayName,ActionType,ActionResult" >> $logFile
 
 Function Get-AccessTokenFromCertificate()

@@ -10,7 +10,7 @@ According to the current [limitations](https://docs.microsoft.com/en-us/azure/ac
 
 
 ### Prerequisites:
-- Create a Certificate (with **New-SelfSignedCertificate.ps1** script you can generate a Self-Signed Certificate)
+- Create a Certificate (with [**New-SelfSignedCertificate.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script you can generate a Self-Signed Certificate)
 
 - [Create](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application) an **App Registration** in Azure
   
@@ -23,11 +23,11 @@ According to the current [limitations](https://docs.microsoft.com/en-us/azure/ac
 
   - [Upload](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-certificate) the above **Certificate** to the **App Registration** in Azure 
   
-- *Modify* the following variables in the **New-SelfSignedCertificate.ps1** script:
+- *Modify* the following variables in the [**New-SelfSignedCertificate.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script:
 ``` powershell
     $TenantName = "contoso.onmicrosoft.com"
 ```
-- *Modify* the following variables in the **AzureADDirectoryRoleMemberSync.ps1** script:
+- *Modify* the following variables in the [**AzureADDirectoryRoleMemberSync.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script:
 ```powershell    
     $TenantId = "contoso.onmicrosoft.com"
     $AppId = ""

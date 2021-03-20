@@ -2,7 +2,7 @@
 According to the current [limitations](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations) of using on-premises groups to manage Directory Role Assignment in Azure AD, with this script you can **synchronize** the membership of an on-premises group with one (or more than one) Azure AD Directory Role.
 
 ### Improvement:
-- Use **Certificate** to request a *Token*, so you can at least bypass limits against Admin (**with MFA**) interaction and schedule
+- Use **Certificate** to request a *Token*, so you can override limits against Admin (**with MFA**) interaction and schedule
 
 - Avoid managing **ClientID** and **ClientSecret** (even if *alternative*, **are always a Username and a Password!**)
 

@@ -1,12 +1,15 @@
 # AzureADDirectoryRoleMemberSync
 According to the current [limitations](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations) of using on-premises groups to manage Directory Role Assignment in Azure AD, with this script you can **synchronize** the membership of an on-premises group with one (or more than one) Azure AD Directory Role.
 
+
+
 ### Improvement:
 - Use **Certificate** to request a *Token*, so you can override limits against Admin (**with MFA**) interaction and schedule
 
 - Avoid managing **ClientID** and **ClientSecret** (even if *alternative*, **are always a Username and a Password!**)
 
 - Use **GraphAPIs**, instead of *AzureAD powershell module*
+
 
 
 ### Prerequisites:
@@ -37,6 +40,7 @@ According to the current [limitations](https://docs.microsoft.com/en-us/azure/ac
 ```
 
 
+
 ### New-SelfSignedCertificate.ps1:
 ```powershell
 $TenantName        = "contoso.onmicrosoft.com"
@@ -57,6 +61,7 @@ $Certificate = New-SelfSignedCertificate @CreateCertificateSplat
 $CertificatePath = Join-Path -Path $StoreLocation -ChildPath $Certificate.Thumbprint
 Export-Certificate -Cert $CertificatePath -FilePath $CerOutputPath | Out-Null
 ```
+
 
 
 ### AzureADDirectoryRoleMemberSync.ps1:

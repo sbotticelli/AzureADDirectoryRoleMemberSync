@@ -13,7 +13,7 @@ If you have an **AzureAD hybrid context** and you've tried to use *an on-premise
 
 
 ### Prerequisites:
-- Create a Certificate (with [**New-SelfSignedCertificate.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script you can generate a Self-Signed Certificate)
+- Create a Certificate (with [*New-SelfSignedCertificate.ps1*](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script you can generate a Self-Signed Certificate)
 
 - [Create](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application) an **App Registration** in Azure
   
@@ -26,11 +26,11 @@ If you have an **AzureAD hybrid context** and you've tried to use *an on-premise
 
   - [Upload](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-certificate) the above **Certificate** to the **App Registration** in Azure 
   
-- *Modify* the following variables in the [**New-SelfSignedCertificate.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script with your Tenant reference:
+- *Modify* the following variables in the [*New-SelfSignedCertificate.ps1*](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script with your Tenant reference:
 ``` powershell
     $TenantName = "contoso.onmicrosoft.com"
 ```
-- *Modify* the following variables in the [**AzureADDirectoryRoleMemberSync.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script with your Tenant, Certificate and ObjectIDs reference:
+- *Modify* the following variables in the [*AzureADDirectoryRoleMemberSync.ps1*](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script with your Tenant, Certificate and ObjectIDs reference:
 ```powershell    
     $TenantId = "contoso.onmicrosoft.com"
     $AppId = ""

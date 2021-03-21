@@ -1,5 +1,5 @@
 # AzureADDirectoryRoleMemberSync
-If you have an **AzureAD hybrid context** and you've tried to use *an on-premises synced group* as member of one of the **AzureAD Directory Roles**, probably you've found out that this option isn't currently [supported](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations). I enjoyed developing this script to find a workaround, and to let you **synchronize** a group's membership with one (*or more than one*, if needed) AzureAD Directory Role membership using **GraphAPI** and **Certificate Token**.
+If you have an **AzureAD hybrid context** and you've tried to use *an on-premises synced group* as member of one of the **AzureAD Directory Roles**, probably you've found out that this option isn't currently [supported](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations). I enjoyed developing this script to find a workaround, and to let you **synchronize** a group's membership with one (*or more than one*, if needed) AzureAD Directory Role membership using **GraphAPIs** and **Certificate Token**.
 
 
 

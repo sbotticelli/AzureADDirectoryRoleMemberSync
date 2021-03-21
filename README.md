@@ -1,7 +1,15 @@
 # AzureADDirectoryRoleMemberSync
+
 If you have an **AzureAD hybrid context** and you've tried to use *an on-premises synced group* as member of one of the **AzureAD Directory Roles**, probably you've found out that this option isn't currently [supported](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations). I enjoyed developing this script to find a workaround, and to let you **synchronize** a group's membership with one (*or more than one*, if needed) AzureAD Directory Role membership using **GraphAPIs** and **Certificate Token**.
 
+<br/>
+<br/>
 
+<p align="center">
+  <img width="669" height="349" src="https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync/blob/main/img/AzureADDirectoryRoleMemberSync_Preview.png">
+</p>
+
+<br/>
 
 ### Improvement:
 - Use **Certificate** to request a *Token*, so you can override limits against Admin (**with MFA**) interaction and schedule
@@ -10,7 +18,8 @@ If you have an **AzureAD hybrid context** and you've tried to use *an on-premise
 
 - Use **GraphAPIs**, instead of *AzureAD powershell module*
 
-
+<br/>
+<br/>
 
 ### Prerequisites:
 - Create a Certificate (with [*New-SelfSignedCertificate.ps1*](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#new-selfsignedcertificateps1) script you can generate a Self-Signed Certificate)
@@ -39,9 +48,14 @@ If you have an **AzureAD hybrid context** and you've tried to use *an on-premise
     $OnPremGrpObjID = ""
 ```
 
+<br/>
+<br/>
 
+### Code:
 
-### New-SelfSignedCertificate.ps1:
+<br/>
+
+#### New-SelfSignedCertificate.ps1:
 ```powershell
 $TenantName        = "contoso.onmicrosoft.com"
 $CerOutputPath     = ".\$($TenantName)_AzureADPowerShellGraphAPICert.cer"
@@ -62,9 +76,9 @@ $CertificatePath = Join-Path -Path $StoreLocation -ChildPath $Certificate.Thumbp
 Export-Certificate -Cert $CertificatePath -FilePath $CerOutputPath | Out-Null
 ```
 
+<br/>
 
-
-### AzureADDirectoryRoleMemberSync.ps1:
+#### AzureADDirectoryRoleMemberSync.ps1:
 ```powershell
 $TenantId = "contoso.onmicrosoft.com"
 $AppId = ""
@@ -259,6 +273,9 @@ $user = $null
 
 Write-Host "############################## FUNCTION ENDED #############################" -ForegroundColor DarkCyan
 ```
+<br/>
+<br/>
+<br/>
 
 
 

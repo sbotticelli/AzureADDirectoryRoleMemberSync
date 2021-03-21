@@ -2,7 +2,7 @@
 <br/>
 
 <p align="center">
-  <img width="800" height="380" src="https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync/blob/main/img/AzureADDirectoryRoleMemberSync_Preview.png">
+  <img width="100%" height="100%" src="https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync/blob/main/img/AzureADDirectoryRoleMemberSync_Preview.png">
 </p>
 
 <br/>

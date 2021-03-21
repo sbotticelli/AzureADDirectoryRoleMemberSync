@@ -1,5 +1,5 @@
 # AzureADDirectoryRoleMemberSync
-According to the current [limitations](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations) of using on-premises groups to manage Directory Role Assignment in Azure AD, with this script you can **synchronize** the membership of an on-premises group with one (or more than one) Azure AD Directory Role.
+If you have an **AzureAD hybrid context** and you've tried to use *an on-premises synced group* as member of one of the **AzureAD Directory Roles**, probably you've found out that this option isn't currently [supported](https://docs.microsoft.com/en-us/azure/active-directory/roles/groups-concept#limitations). I enjoyed developing this script to find a workaround, and to let you **synchronize** a group's membership with one (*or more than one*, if needed) AzureAD Directory Role membership using **GraphAPI** and **Certificate Token**.
 
 
 
@@ -30,7 +30,7 @@ According to the current [limitations](https://docs.microsoft.com/en-us/azure/ac
 ``` powershell
     $TenantName = "contoso.onmicrosoft.com"
 ```
-- *Modify* the following variables in the [**AzureADDirectoryRoleMemberSync.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script with your Tenant, Certificate and Groups reference:
+- *Modify* the following variables in the [**AzureADDirectoryRoleMemberSync.ps1**](https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync#azureaddirectoryrolemembersyncps1) script with your Tenant, Certificate and ObjectIDs reference:
 ```powershell    
     $TenantId = "contoso.onmicrosoft.com"
     $AppId = ""

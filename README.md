@@ -1,5 +1,8 @@
+
+<br/>
+
 <p align="center">
-  <img width="669" height="349" src="https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync/blob/main/img/AzureADDirectoryRoleMemberSync_Preview.png">
+  <img width="800" height="420" src="https://github.com/sbotticelli/AzureADDirectoryRoleMemberSync/blob/main/img/AzureADDirectoryRoleMemberSync_Preview.png">
 </p>
 
 <br/>

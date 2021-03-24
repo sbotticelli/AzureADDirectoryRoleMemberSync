@@ -162,14 +162,52 @@ foreach ($RoleObjID in $RoleObjIDs)
 Write-Host "################### $RoleObjID ##################" -ForegroundColor DarkCyan  
 $user = $null
 
-    ########## CHECK ROLE MEMBERS ##########
-    $ROLEResult = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/directoryRoles/$RoleObjID/members" -Headers $global:Head
-    $RoleMembers = $ROLEResult.value.Id
+    ########## CHECK ROLE MEMBERS  - <100 ##########
+    #$ROLEResult = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/directoryRoles/$RoleObjID/members" -Headers $global:Head
+    #$RoleMembers = $ROLEResult.value.Id
+
+    ########## CHECK ROLE MEMBERS  - >100 ##########
+    $uri = "https://graph.microsoft.com/v1.0/directoryRoles/$RoleObjID/members"
+    
+    $RoleMembers = @()
+    do {
+        $ROLEResult = Invoke-RestMethod -Headers $global:Head -Uri $Uri -UseBasicParsing -Method "GET" -ContentType "application/json"
+        if ($ROLEResult.value) {
+            $RoleMembers += $ROLEResult.value.Id
+        }
+        else {
+            $RoleMembers += $ROLEResult.value.Id
+        }
+        $uri = $ROLEResult.'@odata.nextlink'
+    } until (!($uri))
+
+
+    Write-Host "ROLE MEMBERS: $($RoleMembers.count)"
+
     ########################################
 
-    ##########  CHECK GRP MEMBERS ##########
+    ##########  CHECK GRP MEMBERS  - <100 ##########
     $GRPResult = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/groups/$OnPremGrpObjID/members" -Headers $global:Head
     $grpMembers = $GRPResult.value.Id
+
+    ##########  CHECK GRP MEMBERS  - >100 ##########
+    $uri = "https://graph.microsoft.com/v1.0/groups/$OnPremGrpObjID/members"
+    
+    $grpMembers = @()
+    do {
+        $GRPResult = Invoke-RestMethod -Headers $global:Head -Uri $Uri -UseBasicParsing -Method "GET" -ContentType "application/json"
+        if ($GRPResult.value) {
+            $grpMembers += $GRPResult.value.Id
+        }
+        else {
+            $grpMembers += $GRPResult.value.Id
+        }
+        $uri = $GRPResult.'@odata.nextlink'
+    } until (!($uri))
+
+
+    Write-Host "GROUP MEMBERS: $($grpMembers.count)"
+
     ########################################
 
     if (([string]::IsNullOrEmpty($RoleMembers)))

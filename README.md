@@ -187,8 +187,8 @@ $user = $null
     ########################################
 
     ##########  CHECK GRP MEMBERS  - <100 ##########
-    $GRPResult = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/groups/$OnPremGrpObjID/members" -Headers $global:Head
-    $grpMembers = $GRPResult.value.Id
+    #$GRPResult = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/groups/$OnPremGrpObjID/members" -Headers $global:Head
+    #$grpMembers = $GRPResult.value.Id
 
     ##########  CHECK GRP MEMBERS  - >100 ##########
     $uri = "https://graph.microsoft.com/v1.0/groups/$OnPremGrpObjID/members"
